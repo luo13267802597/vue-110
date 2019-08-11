@@ -3,7 +3,7 @@ import Vue from 'vue'
 //导入MUI样式
 import './lib/mui/css/mui.min.css'
  
-//按需导入Mint-ui组件
+//按需导入Mint-ui组件   
 import {Header} from 'mint-ui'
 Vue.component(Header.name,Header)
 
