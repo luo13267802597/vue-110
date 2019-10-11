@@ -1,17 +1,4 @@
-# 这是一个NB的项目
 
-## 牛不牛逼， 用心去感受，每一行代码中的诗情雅意
-
-### 我们是有灵魂程序员，所以，我们的代码富有诗意；
-
-#### 丫的，实在编不下去了,哈哈哈
-
-## [主流开源协议之间有何异同？](https://www.zhihu.com/question/19568896)
-
-## 用(传统方式)命令行把修改过后的代码上传到码云？？？
-1. git add .
-2. git commit -m "提交信息"
-3. git push
 
 ## 制作首页App组件
 1. 完成 Header 区域，使用的是 Mint-UI 中的Header组件
@@ -92,12 +79,12 @@
     deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
   });
   ```
- 4. 我们在初始化 滑动条 的时候，导入的 mui.js ，但是，控制台报错： `Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode`
-  + 经过我们合理的推测，觉得，可能是 mui.js 中用到了 'caller', 'callee', and 'arguments' 东西，但是， webpack 打包好的 bundle.js 中，默认是启用严格模式的，所以，这两者冲突了；
+ 4. 在初始化 滑动条 的时候，导入的 mui.js ，但是，控制台报错： `Uncaught TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode`
+  + 经过合理的推测，觉得，可能是 mui.js 中用到了 'caller', 'callee', and 'arguments' 东西，但是， webpack 打包好的 bundle.js 中，默认是启用严格模式的，所以，这两者冲突了；
   + 解决方案： 1. 把 mui.js 中的 非严格 模式的代码改掉；但是不现实； 2. 把 webpack 打包时候的严格模式禁用掉；
   + 最终，我们选择了 plan B  移除严格模式： 使用这个插件 babel-plugin-transform-remove-strict-mode
- 5. 刚进入 图片分享页面的时候， 滑动条无法正常工作， 经过我们认真的分析，发现， 如果要初始化 滑动条，必须要等 DOM 元素加载完毕，所以，我们把 初始化 滑动条 的代码，搬到了 mounted 生命周期函数中；
- 6. 当 滑动条 调试OK后，发现， tabbar 无法正常工作了，这时候，我们需要把 每个 tabbar 按钮的 样式中  `mui-tab-item` 重新改一下名字；
+ 5. 刚进入 图片分享页面的时候， 滑动条无法正常工作，如果要初始化 滑动条，必须要等 DOM 元素加载完毕，所以，把 初始化 滑动条 的代码，搬到了 mounted 生命周期函数中；
+ 6. 当 滑动条 调试OK后，发现， tabbar 无法正常工作了，这时候，需要把 每个 tabbar 按钮的 样式中  `mui-tab-item` 重新改一下名字；
  7. 获取所有分类，并渲染 分类列表；
 
 ### 制作图片列表区域
@@ -121,7 +108,3 @@
 ## 绘制 商品列表 页面基本结构并美化
 
 ## 尝试在手机上 去进行项目的预览和测试
-1. 要保证自己的手机可以正常运行；
-2. 要保证 手机 和 开发项目的电脑 处于同一个 WIFI 环境中，也就是说 手机 可以 访问到 电脑的 IP
-3. 打开自己的 项目中 package.json 文件，在 dev 脚本中，添加一个 --host 指令， 把 当前 电脑的 WIFI IP地址， 设置为 --host 的指令值；
- + 如何查看自己电脑所处 WIFI 的IP呢， 在 cmd 终端中运行 `ipconfig` ， 查看 无线网的 ip 地址

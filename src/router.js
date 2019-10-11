@@ -12,6 +12,7 @@ import  GoodsList from  './components/goods/GoodsList.vue'
 import  GoodsInfo from  './components/goods/GoodsInfo.vue'
 import  GoodsDesc from  './components/goods/GoodsDesc.vue'
 import  GoodsComment from  './components/goods/GoodsComment.vue'
+import  lylist   from   './components/photo/Lylist.vue'
 
 
 
@@ -33,7 +34,9 @@ var router = new VueRouter({
     {path:'/home/goodslist',component:GoodsList},
     {path:'/home/goodsinfo/:id',component:GoodsInfo,name:'goodsinfo'},
     {path:'/home/goodsdesc/:id',component:GoodsDesc,name:'goodsdesc'},
-    {path:'/home/goodscomment/:id',component:GoodsComment,name:'goodscomment'}
+    {path:'/home/goodscomment/:id',component:GoodsComment,name:'goodscomment'},
+    {path:'/home/lylist',component:lylist},
+
 
 
     
